@@ -4,11 +4,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFHeader;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Header;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -29,14 +27,7 @@ public final class FirstSpreadsheet {
 		Workbook wb = createWorkbook(fileName);
 		
 		Sheet sheet = wb.createSheet("People");
-		
-		Header header = sheet.getHeader();
-	    header.setCenter("Center Header");
-	    header.setLeft("Left Header");
-	    header.setRight(HSSFHeader.font("Stencil-Normal", "Italic") +
-	                    HSSFHeader.fontSize((short) 16) + "Right w/ Stencil-Normal Italic font and size 16");
-
-		
+				
 		int index = 0;
 		for(Person p : people) {
 			Row row = sheet.createRow(index++);
